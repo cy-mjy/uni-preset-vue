@@ -33,10 +33,6 @@ async function generate(dir, files, base = '', rootOptions = {}) {
 }
 
 module.exports = (api, options, rootOptions) => {
-  const templateWithSass = [
-    'dcloudio/hello-uniapp',
-    'dcloudio/uni-template-news'
-  ]
   api.extendPackage(pkg => {
     return {
       devDependencies: {
@@ -44,7 +40,10 @@ module.exports = (api, options, rootOptions) => {
         '@dcloudio/types': '^3.3.2',
         'miniprogram-api-typings': '*',
         'mini-types': '*',
-        'postcss-comment': '^2.0.0'
+        "postcss": '^8.4.21',
+        'postcss-comment': '^2.0.0',
+        'sass': '^1.49.8',
+        'sass-loader': '^8.0.2'
       }
     }
   })
@@ -70,15 +69,6 @@ module.exports = (api, options, rootOptions) => {
           '@babel/plugin-syntax-typescript': '^7.2.0',
           '@vue/cli-plugin-typescript': '~' + api.cliServiceVersion,
           'typescript': isV4 ? '~4.1.5' : '~4.5.5'
-        }
-      }
-    })
-  } else if (templateWithSass.includes(options.template)) {
-    api.extendPackage(pkg => {
-      return {
-        devDependencies: {
-          'sass': '^1.49.8',
-          'sass-loader': '^8.0.2'
         }
       }
     })
