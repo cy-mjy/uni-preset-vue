@@ -1,9 +1,9 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+	<view>
+		<u-button text="按钮"></u-button>
+		<u-skeleton
+				rows="3"
+		></u-skeleton>
 	</view>
 </template>
 
