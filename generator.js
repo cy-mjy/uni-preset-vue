@@ -77,6 +77,7 @@ module.exports = (api, options, rootOptions) => {
     })
 
     const base = 'src'
+    await generate(path.resolve(__dirname, './template/common'), files)
     await generate(path.resolve(__dirname, './template/default'), files, base, rootOptions)
   })
 }
