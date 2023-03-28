@@ -37,4 +37,7 @@ uni.addInterceptor({
 const app = new Vue({
   ...App
 })
+
+require('./utils/request.js')(app)
+
 app.$mount()
